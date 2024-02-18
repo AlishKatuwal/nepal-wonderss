@@ -1,3 +1,5 @@
+// const Swiper = require('./node_modules/swiper/swiper-bundle.min.js')
+
 let searchBtn = document.querySelector('#search-btn');
 let searchBar = document.querySelector('.search-bar-container');
 let formBtn = document.querySelector('#login-btn');
@@ -48,23 +50,25 @@ videoBtn.forEach(btn => {
         document.querySelector('#video-slider').src = src;
     });
 });
-var swiper = new Swiper(".review-slider", {
-    spaceBetween: 2,
-    loop: true,
-    autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 1,
-        },
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
-    },
-});
+// const swiper = new Swiper('.review-slider', {
+//     spaceBetween: 2,
+//     loop: true,
+//     autoplay: {
+//         delay: 2000,
+//         disableOnInteraction: false,
+//     },
+//     breakpoints: {
+//         640: {
+//             slidesPerView: 1,
+//         },
+//         768: {
+//             slidesPerView: 2,
+//         },
+//         1024: {
+//             slidesPerView: 3,
+//         },
+//     },
+// });
+
+
 

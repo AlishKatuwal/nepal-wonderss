@@ -657,6 +657,9 @@ body {
     padding-bottom: 2rem;
 }
 
+/* .swiper-wrapper {
+    display: grid !important;
+} */
 
 .review .box {
     padding: 2rem;
