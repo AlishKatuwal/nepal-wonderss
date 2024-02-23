@@ -13,10 +13,15 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('Room_type');
-            $table->string('accomodation');
             $table->string('name');
-            $table->double('cost');
+            $table->longText('description');
+            $table->string('image')->nullable();
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
+            $table->double('price');
+            $table->string('included_services')->nullable();
+            $table->foreignId('hotel_id')->constrained('hotels')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

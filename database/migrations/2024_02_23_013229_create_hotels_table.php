@@ -14,15 +14,16 @@ return new class extends Migration
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location');
-            $table->foreignId('package_id')->references('id')->on('packages');
-            $table->foreignId('feedback_id')->references('id')->on('feedbacks');
-            $table->foreignId('city_id')->references('id')->on('cities');
-            $table->text('map');
-            $table->string('contact_no');
-            $table->string('email');
-            $table->decimal('rating', 2, 1)->default(0);
-            $table->string('description',);
+            $table->enum('type', ['hotel', 'resort', 'villa']);
+            $table->string('address');
+            $table->foreignId('city_id')->constrained('cities')->onDelete('cascade');
+            $table->longText('description');
+            $table->string('image')->nullable();
+            $table->string('gallery')->nullable();
+            $table->float('rating')->nullable();
+            $table->string('contact_email');
+            $table->string('contact_phone');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
